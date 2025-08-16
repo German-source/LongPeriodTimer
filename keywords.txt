@@ -1,4 +1,29 @@
-#######################################
+##############################################
 # Syntax Coloring Map For LongPeriodTimer
-#######################################
+##############################################
 
+##############################################
+# Data types (KEYWORD1)
+##############################################
+
+LongPeriodTimer	KEYWORD1
+TimeClock	KEYWORD1
+___TimeClock___	KEYWORD1
+
+##############################################
+# Operators and constants (LITERAL1)
+##############################################
+
+nullptr	LITERAL1
+
+##############################################
+# Methods (KEYWORD2)
+##############################################
+
+attach	KEYWORD2
+restart	KEYWORD2
+detach	KEYWORD2
+setPeriod	KEYWORD2
+tick	KEYWORD2
+seconds	KEYWORD2
+begin	KEYWORD2

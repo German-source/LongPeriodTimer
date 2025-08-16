@@ -1,2 +1,4 @@
 # LongPeriodTimer
- Timer for Arduino with very long period (more than 50 days).
+ Таймер для Arduino на очень большой период (больше 50 суток).
+## Совместимость
+ Все платформы (Используеться стандартная библиотека Arduino).
