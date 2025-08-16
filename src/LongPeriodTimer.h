@@ -42,6 +42,7 @@ class LongPeriodTimer {
                 detach();
                 _start = false;
             }
+            restart();
             return true;
         }
         return false;
