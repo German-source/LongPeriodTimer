@@ -36,7 +36,7 @@ class LongPeriodTimer {
     bool tick(void) {
         TimeClock.tick();
         if (_start && TimeClock.seconds() - _tmr >= _prd) {
-            char md = 1;
+            char md = 0;
             if (_cb) (*_cb)(md);
             if (md == 1) {
                 detach();
