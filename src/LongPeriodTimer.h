@@ -58,6 +58,6 @@ class LongPeriodTimer {
 
     bool _start = true;
     uint32_t _tmr = 0;
-    uint32_t _prd = 10;
+    uint32_t _prd = 1;
     void (*_cb)(mode_t) { nullptr };
 };
