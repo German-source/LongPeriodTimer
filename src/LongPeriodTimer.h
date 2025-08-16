@@ -38,7 +38,7 @@ class LongPeriodTimer {
         if (_start && TimeClock.seconds() - _tmr >= _prd) {
             char md = 1;
             if (_cb) (*_cb)(md);
-            if (md == 0) {
+            if (md == 1) {
                 detach();
                 _start = false;
             }
