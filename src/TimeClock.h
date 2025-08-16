@@ -12,6 +12,12 @@ class ___TimeClock___ {
     uint32_t seconds() {
         return _sec;
     }
+    uint32_t milliseconds() {
+        return millis();
+    }
+    uint32_t microseconds() {
+        return micros();
+    }
     bool tick() {
         if (millis() - _tmr >= 1000) {
             _tmr = millis();

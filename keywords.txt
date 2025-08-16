@@ -7,8 +7,9 @@
 ##############################################
 
 LongPeriodTimer	KEYWORD1
-TimeClock	KEYWORD1
 ___TimeClock___	KEYWORD1
+
+TimeClock	KEYWORD1
 
 ##############################################
 # Operators and constants (LITERAL1)
@@ -16,6 +17,7 @@ ___TimeClock___	KEYWORD1
 
 nullptr	LITERAL1
 mode_t	LITERAL1
+
 TMR_PERIOD	LITERAL1
 TMR_TIMER	LITERAL1
 TMR_LOOP	LITERAL1
@@ -27,8 +29,13 @@ TMR_LOOP	LITERAL1
 attach	KEYWORD2
 restart	KEYWORD2
 detach	KEYWORD2
-setPeriod	KEYWORD2
 tick	KEYWORD2
 seconds	KEYWORD2
 begin	KEYWORD2
+
+setPeriod	KEYWORD2
+
 F	KEYWORD2
+
+milliseconds	KEYWORD2
+microseconds	KEYWORD2
