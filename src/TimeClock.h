@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Arduino.h>
 
 class ___TimeClock___ {
@@ -10,6 +12,7 @@ class ___TimeClock___ {
         begin();
     }
     uint32_t seconds() {
+        tick();
         return _sec;
     }
     uint32_t milliseconds() {
