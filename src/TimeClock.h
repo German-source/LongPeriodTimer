@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 class ___TimeClock___ {
     public:
     void begin() {

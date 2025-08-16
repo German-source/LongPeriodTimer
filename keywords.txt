@@ -15,6 +15,9 @@ ___TimeClock___	KEYWORD1
 ##############################################
 
 nullptr	LITERAL1
+mode_t	LITERAL1
+RESTART	LITERAL1
+TIMER	LITERAL1
 
 ##############################################
 # Methods (KEYWORD2)

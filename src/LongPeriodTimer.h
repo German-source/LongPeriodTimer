@@ -3,6 +3,12 @@
 #include <Arduino.h>
 #include "TimeClock.h"
 
+#define RESTART 0
+#define TIMER 1
+
+typedef char& mode_t;
+
+
 class LongPeriodTimer {
     public:
 
@@ -10,7 +16,7 @@ class LongPeriodTimer {
         _tmr = TimeClock.seconds();
     }
 
-    void attach(void (*cb)()) {
+    void attach(void (*cb)(mode_t)) {
         _cb = cb;
     }
 
@@ -22,10 +28,20 @@ class LongPeriodTimer {
         _prd = period;
     }
 
+    void create() {
+        void (*_cb)(mode_t) = nullptr;
+        _start = true;
+    }
+    
     bool tick(void) {
         TimeClock.tick();
-        if (TimeClock.seconds() - _tmr >= _prd) {
-            _tmr = TimeClock.seconds();
+        if (_start && .seconds() - _tmr >= _prd) {
+            mode_t md = TIMER;
+            if (_cb) (*_cb)(md);
+            if (md == 0) {
+                detach();
+                _start = false;
+            }
             return true;
         }
         return false;
@@ -37,9 +53,8 @@ class LongPeriodTimer {
 
     private:
 
-    bool _start = false;
+    bool _start = true;
     uint32_t _tmr = 0;
     uint32_t _prd = 10;
-    uint32_t _sec = 0;
-    void (*_cb)() { nullptr };
+    void (*_cb)(mode_t) { nullptr };
 };
