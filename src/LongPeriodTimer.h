@@ -3,8 +3,9 @@
 #include <Arduino.h>
 #include "TimeClock.h"
 
-#define RESTART 0
-#define TIMER 1
+#define TMR_RESTART 0
+#define TMR_TIMER 1
+#define TMR_LOOP 2
 
 typedef char& mode_t;
 
@@ -41,8 +42,10 @@ class LongPeriodTimer {
             if (md == 1) {
                 detach();
                 _start = false;
+            } 
+            if (md != 2) {
+                restart();
             }
-            restart();
             return true;
         }
         return false;
