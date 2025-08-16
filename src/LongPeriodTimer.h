@@ -3,12 +3,11 @@
 #include <Arduino.h>
 #include "TimeClock.h"
 
-#define TMR_RESTART 0
+#define TMR_PERIOD 0
 #define TMR_TIMER 1
 #define TMR_LOOP 2
 
 typedef char& mode_t;
-
 
 class LongPeriodTimer {
     public:
